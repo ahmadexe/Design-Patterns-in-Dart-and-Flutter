@@ -24,7 +24,7 @@ class ApiResponse2 {
         "title: "Riverpod State Management"
       },
       {
-        "name": "Flex Angelov",
+        "name": "Hassam Talha",
         "title": "BloC State Management"
       }
     ]
