@@ -10,9 +10,28 @@ class ScreenTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     final app = Provider.of<AppProvider>(context);
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Screen Two'),
+      ),
       body: Center(
-        child: Text(app.currentVal.toString(), style: const TextStyle(fontSize: 24.0))
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "Hello Flutter Islamabad! :)",
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
+            ),
+            const SizedBox(height: 26.0),
+            Text(
+              app.currentVal.toString(),
+              style: const TextStyle(
+                fontSize: 24.0,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
