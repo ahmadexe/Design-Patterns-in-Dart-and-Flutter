@@ -36,7 +36,8 @@ class Person {
 
   String toJson() => json.encode(toMap());
 
-  factory Person.fromJson(String source) => Person.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Person.fromJson(String source) =>
+      Person.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() => 'Person(age: $age, name: $name)';
@@ -44,10 +45,8 @@ class Person {
   @override
   bool operator ==(covariant Person other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.age == age &&
-      other.name == name;
+
+    return other.age == age && other.name == name;
   }
 
   @override

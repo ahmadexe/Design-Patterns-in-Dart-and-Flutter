@@ -1,33 +1,62 @@
-/* Prototype design pattern is used to create objects from one instance
-  * In dart we use copyWith to acheive this.
-  * This is useful when we have to create multiple objects that are similar.
-  * NOTE!: THIS SHOULD NEVER BE USED JUST TO MODIFY AN INSTANCE AS COPYWITH or prototype pattern CREATES A NEW INSTANCE.
-*/
+abstract class Shape {
+  String? type;
 
-class Student {
-  final String name;
-  final String reg;
-  
-  Student({
-    required this.name,
-    required this.reg,
-  });
+  Shape clone();
 
-  Student copyWith({
-    String? name,
-    String? reg,
-  }) {
-    return Student(
-      name: name ?? this.name,
-      reg: reg ?? this.reg,
-    );
+  void draw() {
+    print("Drawing a $type");
   }
 }
 
-void main(List<String> args) {
-  Student student1 = Student(name: "Ahmad", reg: "052");
-  Student student2 = student1.copyWith();
-  print(student2.name);
-  student2 = student1.copyWith(name: "Haider");
-  print(student2.name);
+class Circle extends Shape {
+  double radius;
+
+  Circle(this.radius) {
+    type = "Circle";
+  }
+
+  @override
+  Shape clone() {
+    return Circle(radius);
+  }
+}
+
+class Rectangle extends Shape {
+  double width;
+  double height;
+
+  Rectangle(this.width, this.height) {
+    type = "Rectangle";
+  }
+
+  @override
+  Shape clone() {
+    return Rectangle(width, height);
+  }
+}
+
+void main() {
+  // Create a prototype instance of Circle
+  Circle originalCircle = Circle(5.0);
+
+  // Clone the originalCircle to create a new instance
+  Circle clonedCircle = originalCircle.clone() as Circle;
+
+  // Verify that the clonedCircle is a separate instance with the same properties
+  print(originalCircle == clonedCircle); // false
+  print(originalCircle.radius); 
+  print(clonedCircle.radius); 
+
+  // Create a prototype instance of Rectangle
+  Rectangle originalRectangle = Rectangle(10.0, 7.0);
+
+  // Clone the originalRectangle to create a new instance
+  Rectangle clonedRectangle = originalRectangle.clone() as Rectangle;
+
+  // Verify that the clonedRectangle is a separate instance with the same properties
+  print(originalRectangle == clonedRectangle); 
+  print(originalRectangle.width); 
+  print(clonedRectangle.width); 
+  print(originalRectangle.height); 
+  print(clonedRectangle.height); 
 }
