@@ -6,18 +6,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final platformFactory = AbstractFactoryImplementation();
     return Scaffold(
       appBar: AppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AbstractFactoryImplementation()
-                .buildButton(context, const Text("Hello"), () {
+            platformFactory.buildButton(context, const Text("Hello"), () {
               debugPrint("Hello");
             }),
             const SizedBox(height: 10),
-            AbstractFactoryImplementation().buildIndicator(context),
+            platformFactory.buildIndicator(context),
           ],
         ),
       ),
