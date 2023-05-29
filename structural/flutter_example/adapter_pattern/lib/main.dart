@@ -19,8 +19,7 @@ class MyApp extends StatelessWidget {
 
 class Home extends StatelessWidget {
   Home({super.key});
-  final data = Response1Adapter().getTalks();
-
+  final data = TalksRepository.getTalks();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

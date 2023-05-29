@@ -23,7 +23,7 @@ class Response2Adapter {
 }
 
 class TalksRepository {
-  List<Talk> getTalks() {
+  static List<Talk> getTalks() {
     final response1 = Response1Adapter().getTalks();
     final response2 = Response2Adapter().getTalks();
     return [...response1, ...response2];

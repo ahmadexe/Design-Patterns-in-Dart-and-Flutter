@@ -21,7 +21,7 @@ class ApiResponse2 {
     [
       {
         "name": "Rivaan Ranawat",
-        "title: "Riverpod State Management"
+        "title": "Riverpod State Management"
       },
       {
         "name": "Hassam Talha",
