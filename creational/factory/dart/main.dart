@@ -31,7 +31,6 @@ class Apple implements Laptop {
   void os() {
     print("MacOS");
   }
-
 }
 
 class Dell implements Laptop {
