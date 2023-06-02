@@ -10,7 +10,7 @@ abstract class PlatformIndicator {
       case TargetPlatform.iOS:  
         return IOSIndicator();
       default:
-        return IOSIndicator();
+        return AndroidIndicator();
     }
   }
 }
